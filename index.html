@@ -106,36 +106,182 @@
   .trait{display:flex;align-items:center;gap:14px;font-size:0.76rem;letter-spacing:2px;color:var(--text-dim);}
   .trait-dot{width:6px;height:6px;background:var(--orange);flex-shrink:0;box-shadow:0 0 8px var(--orange-glow);}
 
-  /* LEVELS */
-  .levels-section{background:var(--black-soft);padding:110px 0;position:relative;}
-  .levels-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--orange),transparent);}
-  .levels-inner{max-width:1400px;margin:0 auto;padding:0 60px;}
-  .levels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-  .level-card{background:var(--black-card);border:1px solid var(--black-border);padding:36px 32px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s;}
-  .level-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,107,0,0.03),transparent);pointer-events:none;}
-  .level-card:hover{border-color:rgba(255,107,0,0.3);transform:translateY(-4px);}
-  .level-num{font-family:'Bebas Neue',cursive;font-size:5rem;color:rgba(255,107,0,0.08);line-height:1;position:absolute;top:12px;right:18px;transition:color 0.3s;}
-  .level-card:hover .level-num{color:rgba(255,107,0,0.18);}
-  .level-name{font-family:'Bebas Neue',cursive;font-size:1.5rem;letter-spacing:3px;margin-bottom:10px;color:var(--text);}
-  .level-desc{font-size:0.76rem;line-height:1.85;color:var(--text-dim);}
-  .level-tag{display:inline-block;margin-top:14px;font-size:0.6rem;letter-spacing:3px;color:var(--orange);border:1px solid rgba(255,107,0,0.3);padding:4px 10px;text-transform:uppercase;}
+  # Copy-Paste Ready Levels Section
 
-  /* DOWNLOAD */
-  .download-section{background:var(--black-soft);padding:110px 60px;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--black-border);}
-  .download-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',cursive;font-size:18rem;color:rgba(255,107,0,0.025);letter-spacing:16px;white-space:nowrap;pointer-events:none;user-select:none;}
-  .download-content{position:relative;z-index:1;}
-  .download-title{font-family:'Bebas Neue',cursive;font-size:clamp(2.8rem,7vw,6.5rem);letter-spacing:6px;line-height:1;margin-bottom:18px;}
-  .download-title span{color:var(--orange);text-shadow:0 0 35px var(--orange-glow);}
-  .download-sub{font-size:0.78rem;letter-spacing:3px;color:var(--text-dim);margin-bottom:56px;}
-  .download-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-  .store-btn{display:flex;align-items:center;gap:14px;background:var(--black-card);border:1px solid var(--black-border);padding:18px 36px;text-decoration:none;color:var(--text);transition:all 0.3s;position:relative;overflow:hidden;}
-  .store-btn::before{content:'';position:absolute;inset:0;background:var(--orange);transform:translateX(-101%);transition:transform 0.3s ease;z-index:0;}
-  .store-btn:hover::before{transform:translateX(0);}
-  .store-btn:hover{color:var(--black);border-color:var(--orange);}
-  .store-btn-inner{position:relative;z-index:1;text-align:left;}
-  .store-btn-label{font-size:0.62rem;letter-spacing:2px;opacity:0.65;display:block;text-transform:uppercase;}
-  .store-btn-name{font-family:'Bebas Neue',cursive;font-size:1.35rem;letter-spacing:3px;display:block;}
-  .store-icon{font-size:1.9rem;position:relative;z-index:1;}
+Replace your current LEVELS section and LEVELS CSS with this.
+
+```html
+<section class="levels-section" id="levels">
+  <div class="levels-inner">
+    <div class="section-label">LEVELS</div>
+    <h2 class="section-title">MASTER EVERY ZONE</h2>
+
+    <div class="levels-grid">
+
+      <div class="level-card level-1">
+        <div class="level-num">01</div>
+
+        <h3 class="level-name">THE PIT</h3>
+
+        <p class="level-desc">
+          Precision gravity flips through razor-thin corridors.
+          One mistake sends you straight into the spikes.
+        </p>
+
+        <span class="level-tag">Beginner</span>
+      </div>
+
+      <div class="level-card">
+        <div class="level-num">02</div>
+
+        <h3 class="level-name">VOID RUN</h3>
+
+        <p class="level-desc">
+          Navigate collapsing pathways while gravity constantly shifts.
+        </p>
+
+        <span class="level-tag">Medium</span>
+      </div>
+
+      <div class="level-card">
+        <div class="level-num">03</div>
+
+        <h3 class="level-name">CORE X</h3>
+
+        <p class="level-desc">
+          Brutal timing challenges deep inside the reactor core.
+        </p>
+
+        <span class="level-tag">Hard</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+```
+
+```css
+/* LEVELS */
+.levels-section{
+  background:var(--black-soft);
+  padding:110px 0;
+  position:relative;
+}
+
+.levels-section::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--orange),transparent);
+}
+
+.levels-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:0 60px;
+}
+
+.levels-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.level-card{
+  background:var(--black-card);
+  border:1px solid var(--black-border);
+  padding:36px 32px;
+  position:relative;
+  overflow:hidden;
+  min-height:320px;
+  transition:all 0.35s ease;
+}
+
+.level-1{
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.88),
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.20)
+    ),
+    url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAx
+NDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAFXA4QDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL
+/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2
+t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/APn+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACi
+...TRUNCATED FOR BREVITY...
+');
+
+  background-size:cover;
+  background-position:center;
+}
+
+.level-card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(255,107,0,0.12),
+    transparent 60%
+  );
+  pointer-events:none;
+}
+
+.level-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,107,0,0.35);
+
+  box-shadow:
+    0 12px 40px rgba(255,107,0,0.18),
+    0 0 50px rgba(255,107,0,0.08);
+}
+
+.level-num{
+  font-family:'Bebas Neue',cursive;
+  font-size:5rem;
+  color:rgba(255,255,255,0.08);
+  line-height:1;
+  position:absolute;
+  top:12px;
+  right:18px;
+}
+
+.level-name{
+  font-family:'Bebas Neue',cursive;
+  font-size:1.6rem;
+  letter-spacing:3px;
+  margin-bottom:12px;
+  position:relative;
+  z-index:2;
+}
+
+.level-desc{
+  font-size:0.76rem;
+  line-height:1.9;
+  color:rgba(255,255,255,0.82);
+  max-width:85%;
+  position:relative;
+  z-index:2;
+}
+
+.level-tag{
+  display:inline-block;
+  margin-top:18px;
+  font-size:0.6rem;
+  letter-spacing:3px;
+  color:var(--orange);
+  border:1px solid rgba(255,107,0,0.35);
+  padding:5px 12px;
+  text-transform:uppercase;
+  background:rgba(0,0,0,0.35);
+  position:relative;
+  z-index:2;
+}
+```
 
   /* SOCIAL LINKS */
   .social-strip{background:var(--black);padding:50px 60px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;border-top:1px solid var(--black-border);}
